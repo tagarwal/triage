@@ -1,0 +1,278 @@
+<html><head><title>JavaScript Toolbox - DHTML Expandable, Collapsable Tree</title>
+
+	
+<script language="JavaScript" src="/jscript/mktree.js"></script>
+<link rel="stylesheet" href="/jscript/mktree.css"></head><body alink="#00615f" bgcolor="#ffffff" link="#00615f" vlink="#00615f">
+<div style="border: 50px solid red; padding: 10px;">
+<h1>JavascriptToolbox.com Now Available!</h1>
+Almost all of my javascript code has been moved over to its new home at <a href="http://www.javascripttoolbox.com/">The Javascript Toolbox</a>.
+Please go there to find the latest scripts, information, etc. These
+pages will remain here for a while for historical purposes in case
+anyone needs a production copy of old code.
+</div>
+
+<table cellpadding="5" width="600">
+<tbody><tr>
+	<td><img src="example_files/icon.gif" alt="" border="0" height="107" width="130"></td>
+	<td valign="middle">
+		<font size="+3">DHTML Tree</font>
+		<hr align="left" color="black" noshade="noshade" width="300">
+		[<a href="http://www.mattkruse.com/javascript/">Javascript Toolbox</a>]&nbsp;&nbsp;[<span style="background-color: yellow;">Example</span>]&nbsp;&nbsp;[<a href="http://www.mattkruse.com/javascript/mktree/source.html">Source</a>]&nbsp;&nbsp;[<a href="http://www.mattkruse.com/javascript/mktree/documentation.html">Documentation</a>]
+	</td>
+</tr>
+</tbody></table>
+
+<table border="0" width="100%"><tbody><tr><td align="left" valign="top" width="100%">
+
+
+<u><b>Description:</b></u>
+<br>
+
+This code is an extension of the great work done by <a href="http://www.kryogenix.org/code/browser/aqlists/">Stuart Langridge's aqlists</a>.
+I've re-written his code and added a lot of my own features to make
+what I feel is the best option for building expanding and collapsing
+tree structures using DHTML.
+<br><br>
+What's unique about this approach (and Stuart's) is that <b>this code requires almost no effort for the person designing the site</b>.
+The entire tree structure is built from a normal &lt;UL&gt; HTML
+structure. The DHTML loads, finds the structure, and builds a tree out
+of it, all <b>automatically</b>!
+<br><br>
+The look and functionality is controlled <b>entirely through CSS</b>,
+so only newer browsers will be able to see the tree (IE5+, NN6+, Opera,
+etc). However, older browsers like Netscape4 will still see your entire
+data structure as a plain Unordered List, so <b>it degrades nicely</b>!
+<br><br>
+See the <a href="http://www.mattkruse.com/javascript/mktree/documentation.html">documentation</a> for details on exactly how to use this in your page, and view the source of this page as an example.
+<br><br>
+<u><b>Example:</b></u>
+<br>
+View the source of this document to see that the tree below exists in
+the HTML document as a plain unordered list. The only thing done in the
+code is to set the CLASS of the UL. Also, the class of a couple of
+sub-listings were set to "liOpen" to show how the tree can be
+initialized to a state when loaded. That's it! It couldn't be simpler.
+<br>
+This is the directory listing for an installation of <a href="http://www.calendarscript.com/">CalendarScript</a>:<br>
+
+<a href="#" onclick="expandTree('tree1'); return false;">Expand All</a>&nbsp;&nbsp;&nbsp;
+<a href="#" onclick="collapseTree('tree1'); return false;">Collapse All</a>&nbsp;&nbsp;&nbsp;
+<a href="#" onclick="expandToItem('tree1','login'); return false;">Expand and find login.html</a>
+
+<ul class="mktree" id="tree1">
+	<li class="liOpen"><span class="bullet">&nbsp;cache/
+		</span><ul>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>delete_me.txt</li>
+		</ul>
+	</li>
+	<li class="liOpen"><span class="bullet">&nbsp;calendars/
+		</span><ul>
+			<li class="liOpen"><span class="bullet">&nbsp;_template/
+				</span><ul>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>config.txt</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>config.txt.lock</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>events.id</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>events.lock</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>events.properties</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>events.txt</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>schedule.id</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>schedule.lock</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>schedule.properties</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>schedule.txt</li>
+				</ul>
+			</li>
+			<li class="liOpen"><span class="bullet">&nbsp;default/
+				</span><ul>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>config.txt</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>config.txt.lock</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>events.id</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>events.lock</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>events.properties</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>events.txt</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>schedule.id</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>schedule.lock</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>schedule.properties</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>schedule.txt</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>calendars.id</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>calendars.lock</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>calendars.properties</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>calendars.txt</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>command_list.txt</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>config.txt</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>config.txt.lock</li>
+	<li class="liOpen"><span class="bullet">&nbsp;lib/
+		</span><ul>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>CGISession.inc</li>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>ConfigFile.pm</li>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>DBFile.pm</li>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>DBFileUtil.inc</li>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>Date.inc</li>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>Event.inc</li>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>HTML.pm</li>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>SimpleDateFormat.pm</li>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>TimeLocal.inc</li>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>User.pm</li>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>asp.inc</li>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>calendars.inc</li>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>flock.inc</li>
+		</ul>
+	</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>permissions.id</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>permissions.lock</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>permissions.properties</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>permissions.txt</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>permissions_list.txt</li>
+	<li class="liOpen"><span class="bullet">&nbsp;plugins/
+		</span><ul>
+			<li class="liOpen"><span class="bullet">&nbsp;TestPlugin/
+				</span><ul>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>before_commands.pl</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>command_list.txt</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>plugin_test.html</li>
+					<li class="liBullet"><span class="bullet">&nbsp;</span>readme.txt</li>
+				</ul>
+			</li>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>command_list.txt</li>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>permissions_list.txt</li>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>plugin_files.txt</li>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>plugins.txt</li>
+		</ul>
+	</li>
+	<li class="liOpen"><span class="bullet">&nbsp;session/
+		</span><ul>
+			<li class="liBullet"><span class="bullet">&nbsp;</span>delete_me.txt</li>
+		</ul>
+	</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>ssi.txt</li>
+	<li class="liOpen"><span class="bullet">&nbsp;templates/
+		</span><ul>
+			<li class="liOpen"><span class="bullet">&nbsp;admin/
+				</span><ul>
+					<li class="liOpen"><span class="bullet">&nbsp;English/
+						</span><ul>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>AnchorPosition.js</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>CalendarPopup.js</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>ColorPicker.js</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>GetDate.js</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>PopupWindow.js</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>TimeValidations.js</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>_command_list.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>_footer.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>_header.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>add_edit_calendar.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>add_edit_event.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>add_edit_field.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>add_edit_user.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>admin_interface.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>approve.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>calendar_settings.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>change_password.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>customize_event_fields.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>customize_user_fields.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>dates.js</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>edit_delete_events.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>edit_delete_users.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>error.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>feedback.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>import_events.html</li>
+							<li class="liBullet" id="login"><span class="bullet">&nbsp;</span>login.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>main.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>manage_calendars.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>messages.txt</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>permissions.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>permissions_error.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>plugins.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>schedule_event_non_recur.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>schedule_event_recurring.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>select_calendar.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>selectbox.js</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>setup1.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>setup2.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>setup3.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>setup_complete.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>styles.css</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>tabnext.js</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>template.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>template_preferences.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>util.js</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>validations.js</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li class="liOpen"><span class="bullet">&nbsp;calendars/
+				</span><ul>
+					<li class="liOpen"><span class="bullet">&nbsp;default/
+						</span><ul>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>default.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>error.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>login.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>preferences.pl</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>preferences.txt</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>ssi.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>styles.css</li>
+						</ul>
+					</li>
+					<li class="liOpen"><span class="bullet">&nbsp;oldstyle/
+						</span><ul>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>_view.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>day.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>default.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>error.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>event_detail.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>login.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>search.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>ssi.htmlv
+							</li><li class="liBullet"><span class="bullet">&nbsp;</span>styles_scripts.html</li>
+						</ul>
+					</li>
+					<li class="liOpen"><span class="bullet">&nbsp;simple/
+						</span><ul>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>default.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>error.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>login.html</li>
+							<li class="liBullet"><span class="bullet">&nbsp;</span>ssi.html</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>users.id</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>users.lock</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>users.properties</li>
+	<li class="liBullet"><span class="bullet">&nbsp;</span>users.txt</li>
+</ul>
+
+
+<br><br>
+
+<hr>
+<i>For future consideration: I want to add cookie support, so the state
+of the tree remains the same for each unique tree (with a given ID).
+This would allow you to leave a page with a tree and come back later
+and have it expanded to the same place as before. If I get time...
+</i>
+
+</td><td valign="top">
+<script type="text/javascript">
+google_ad_client = "pub-9155030588311591";
+google_ad_width = 120;
+google_ad_height = 600;
+google_ad_format = "120x600_as";
+google_color_border = "006666";
+google_color_bg = "FFFFFF";
+google_color_link = "006666";
+google_color_url = "006666";
+google_color_text = "000000";
+</script>
+<script type="text/javascript" src="example_files/show_ads.js">
+</script><iframe name="google_ads_frame" src="example_files/ads.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" frameborder="0" height="600" scrolling="no" width="120"></iframe>
+</td></tr></tbody></table>
+
+
+</body></html>

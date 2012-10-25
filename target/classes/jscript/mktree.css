@@ -1,0 +1,97 @@
+/* Put this inside a @media qualifier so Netscape 4 ignores it */
+@media screen, print { 
+	/* Turn off list bullets */
+	ul.mktree  li { list-style: none; } 
+	/* Control how "spaced out" the tree is */
+	ul.mktree, ul.mktree ul , ul.mktree li { margin-left:10px; padding:0px; }
+	/* Provide space for our own "bullet" inside the LI */
+	ul.mktree  li           .bullet { padding-left: 15px; }
+	/* Show "bullets" in the links, depending on the class of the LI that the link's in */
+	ul.mktree  li.liOpen    .bullet { cursor: pointer; background: url(minus.gif)  center left no-repeat; }
+	ul.mktree  li.liClosed  .bullet { cursor: pointer; background: url(plus.gif)   center left no-repeat; }
+	ul.mktree  li.liBullet  .bullet { cursor: default; background: url(bullet.gif) center left no-repeat; }
+	/* Sublists are visible or not based on class of parent LI */
+	ul.mktree  li.liOpen    ul { display: block; }
+	ul.mktree  li.liClosed  ul { display: none; }
+	/* Format menu items differently depending on what level of the tree they are in */
+	ul.mktree  li { font-size: 11pt; }
+	ul.mktree  li ul li { font-size: 11pt; }
+	ul.mktree  li ul li ul li { font-size: 11pt; }
+	ul.mktree  li ul li ul li ul li { font-size: 11pt; }
+
+        table { font-size: 11pt;
+                font-family: Arial, Helvetica, sans-serif;
+              }
+        tbody { border-style: solid;
+                border-color: white;
+                border-width: 1px;                
+                text-align: left;
+                vertical-align: top;
+              }
+        th    { padding: 4px;
+                background-color: #C3C3E5; /* #81A594; */
+              }
+        td    { padding: 2px;
+                background-color: #F1F0FF; /* #E6E6DC; */
+              }
+
+        body,H1,H2,H3,H4 { font-family: Arial, Helvetica, sans-serif }
+        H1 { font-size: 24px }
+        H2 { font-size: 20px }
+        H3 { font-size: 16px }
+        H4 { font-size: 12px }
+
+img {
+    border-color: white;
+    text-decoration: none;
+}
+
+a:link {
+    color: #00008b;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #00008b;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #69a11d;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #69a11d;
+    text-decoration: underline;
+}
+
+#hintbox  { /*CSS for pop up hint box */
+    position:absolute;
+    top: 0;
+    background-color: lightyellow;
+    width: 350px; /*Default width of hint.*/ 
+    padding: 3px;
+    border:1px solid black;
+    font:normal 11px Verdana;
+    line-height:18px;
+    z-index:100;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    visibility: hidden;
+}
+
+.hintanchor { /*CSS for link that shows hint onmouseover*/
+   /* font-weight: bold; */
+   /* color: navy;
+      margin: 3px 8px; */
+}
+
+
+/* For targeted elements - defines how targeted elements (with the class "fragment") should look. */
+.fragment {
+  background-color: yellow;
+  color: black;
+}
+
+}

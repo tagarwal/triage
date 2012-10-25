@@ -1,0 +1,45 @@
+<html><head>
+<script language="JavaScript" src="/jscript/mktree.js"></script>
+<link rel="stylesheet" href="/jscript/mktree.css">
+</head><body>
+<H2>Tree display of test runs</H2>
+This panel is used for displaying test runs in tree form.
+Select a test run in the left panel to see it displayed here.
+<script>checkBrowserVersion();</script>
+
+<H4>Tree Manipulation</H4>
+<ul>
+<li> <IMG src="/jscript/plus.gif"> click to expand tree nodes beneath this node.
+<li> <IMG src="/jscript/minus.gif"> click to collapse tree nodes beneath this node.
+<li> use the <a href="#">Expand all</a> and <a href="#">Collapse all</a> links
+     to expand or collapse all nodes in the tree.
+</ul>
+
+<H4>Information Provided</H4>
+<ul>
+<li> <IMG src="/jscript/check.gif"> a test .xml or .suc file with passing tests.
+                                    Hovering provide summary information on xml files.</li>
+<li> <IMG src="/jscript/x.gif"> a test .xml or .dif file with one or more failing tests.
+                                    Hovering provides summary information on xml files.</li>
+<li> <IMG src="/jscript/info.gif">  displays more information when hovered over.
+                                   In some cases it will show the
+                                   host status taken at a point in time (from history log),
+                                   or it may show some detail on test run results.
+                                   Hovering provides summary information.</li>
+<li> <IMG src="/jscript/link.gif"> link to related information, such as a corresponding build file.</li>
+<li> <IMG src="/jscript/tri.gif"> a diagnostic log warning entry.</li>
+                                   Hovering provides an abbreviated version of the full entry.</li>
+<li> <IMG src="/jscript/stop.gif"> a diagnostic log error entry.
+                                   Hovering provides an abbreviated version of the full entry.</li>
+<li> <a href="#">a link</a> typically displays the content of a log file in the <i>detail</i> pane.</li>
+<li> <IMG src="/jscript/zoom_out.gif"> zooms out to the full log file where a record was taken from.
+                                       This is placed in in the <i>detail</i> pane.</li>
+<li> <IMG src="/jscript/text.gif"> fulltext - shows the full content of the referred file when hovered over.</li>
+<li> <IMG src="/jscript/endtext.gif"> endtext - shows the last couple of lines of the referred file file when hovered over.</li>
+</ul>
+
+<small>These frames have been produced by the <code>triage</code> tool.
+It is available in J2EE labels under <code>j2ee/utl/triage</code>.<br>
+For additional information, see
+<a href="http://stjpg.us.oracle.com/Wiki.jsp?page=TriageTool">http://stjpg.us.oracle.com/Wiki.jsp?page=TriageTool</a></small>
+</body></html>
